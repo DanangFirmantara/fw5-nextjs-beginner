@@ -1,7 +1,9 @@
+import {useEffect} from 'react'
 import '../styles/application.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@popperjs/core'
-import {useEffect} from 'react'
+import '../styles/globals.css'
+
 
 function MyApp({ Component, pageProps }) {
   useEffect(()=>{

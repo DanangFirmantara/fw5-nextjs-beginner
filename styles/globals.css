@@ -2,8 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Nunito Sans', 'Times New Roman', Times, serif;
 }
 
 a {
@@ -13,4 +12,31 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.rounded{
+  border-radius: 10px!important;
+}
+
+.header{
+  height: 30rem;
+}
+.fw-bolder{
+  font-weight: 800 !important;
+}
+.fs-0{
+  font-size: 68px;
+}
+
+.icon{
+  width: 60px;
+  height: 60px;
+}
+.icon-phone{
+  width: 40px;
+  height: 40px;
+  transform: scaleX(-1);
+}
+.shadow-dark{
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
