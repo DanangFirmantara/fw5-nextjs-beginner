@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Js Beginner
+Pada Project kali ini merupakan implementasi dari program Next Js. Pada aplikasi yang dikembangkan saat ini yaitu sebuah aplikasi E wallet yang bernama DWallet. page yang tersedia pada aplikasi ini yaitu
+* Landing Page 
+* Login
+* Signup
+* Create Pin
+* Reset Password
+* Home
+* History
+* Transfer
+* Confirmation
+* pin Confirmation
+* Status
+* Top Up
+* Profile
+* Profile when user notification
+* change password
+* change pin
+* add phone number
+* Manage phone number
 
-## Getting Started
-
-First, run the development server:
+# Local Development
+pada repository ini saya menggunakan 
+* Node v17.3.0
+* Visual Code sebagai IDE
 
 ```bash
+# clone repository
+git clone https://github.com/DanangFirmantara/fw5-nextjs-beginner
+
+# move into the project directory, then into the site
+cd fw5-nextjs-beginner
+
+# install depedencies
+npm install
+
+# run local server
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Cara menggunakan repository
+pada repository terdapat beberapa folder yang digunakan yaitu
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## assets
+folder assets digunakan untuk menyimpan setiap keperluan yang ada seperti
+* bootstrap : berisi file file yang berasal dari bootstrap
+* css : merupakan file css custom
+* google-font : merupakan folder dari css setiap font yang digunakan
+* image : folder ini digunakan untuk menyimpan setiap gambar yang akan digunakan pada halaman website
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<!-- # Technology
+pada project ini menggunakan beberapa teknology yang digunakan yaitu
+* HTML : berguna sebagai kerangka dari tampilan website itu sendiri
+* CSS : digunakan untuk membuat tampilan website menjadi lebih berwarna
+* Bootstrap : digunakan sebagai fitur pembantu utama dalam memanfaatkan CSS sehingga dalam pembuatan setiap elemen menjadi lebih cepat dan mudah di responsive kan
+* next Js  -->
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<!-- # Fitur fitur yang tersedia 
+pada project ini saya memiliki beberapa fitur
+* button yang digunakan dibuat responsive
+* tulisan yang ditampilkan dibuat sekontras mungkin
+* warna yang diselaraskan
+* link pada setiap element dapat digunakan -->
 
-## Learn More
+<!-- # Netlify
+project ini telah di deploy di [netlify](https://goofy-keller-d20657.netlify.app/). cara akses :
+* [Home](https://goofy-keller-d20657.netlify.app/home-2.html)
+* [Login](https://goofy-keller-d20657.netlify.app/login-2.html)
+* [Sign-Up](https://goofy-keller-d20657.netlify.app/sign-up.html)
+* [Fogot Password](https://goofy-keller-d20657.netlify.app/forgot-password.html)
+* [History](https://goofy-keller-d20657.netlify.app/history.html)
+* [Payment](https://goofy-keller-d20657.netlify.app/payment-2.html)
+* [Profile](https://goofy-keller-d20657.netlify.app/profile.html)
+* [Reservation](https://goofy-keller-d20657.netlify.app/reservation.html)
+* [vehicle Detail](https://goofy-keller-d20657.netlify.app/vehicle-detail.html)
+* [vehicle Type](https://goofy-keller-d20657.netlify.app/vehicle-type.html) -->
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### jika ada pertanyaan
+Jika ada pertanyaan mengenai project ini silahkan kontak
+* [instagram](https://www.instagram.com/danangf14)
+* Email : danangfirmantara837@gmail.com
