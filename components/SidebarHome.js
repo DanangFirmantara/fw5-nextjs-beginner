@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 const SidebarHome = () => {
 	return (
-		<div className='text-pallet-2 bg-pallet-1 bg-pallet-1 pattern px-5 py-5'>
-			<Container className='vh-100'>
+		<div className='text-pallet-2 bg-pallet-1 bg-pallet-1 pattern px-5 py-5 sidebar'>
+			<Container>
 				<Link href='/'>
 					<a className='fs-3 fw-bold text-pallet-2'>ZWallet</a>
 				</Link>

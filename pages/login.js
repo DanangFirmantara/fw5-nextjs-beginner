@@ -21,8 +21,8 @@ const Login = () =>{
 	}
 
 	return (
-		<Row className='g-0'>
-			<Col sm={7} className='vh-100'>
+		<Row className='g-0 vh-100'>
+			<Col sm={7}>
 				<SidebarHome />
 			</Col>
 			<Col className='p-5'>
@@ -56,7 +56,7 @@ const Login = () =>{
 							Login
 						</button>
 					</form>
-					<div className='text-pallet-6 fs-7 text-center'>Don&lsquo;t have an account? Let%lsquo;s <span className='text-pallet-1 fw-bold'>Sign Up</span></div>
+					<div className='text-pallet-6 fs-7 text-center'>Don&lsquo;t have an account? Let%lsquo;s <Link href='/signup'><a className='text-pallet-1 fw-bold'> Sign Up</a></Link></div>
 				</Container>
 			</Col>
 		</Row>

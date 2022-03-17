@@ -2,11 +2,10 @@
 import { Row,Col, Container } from 'react-bootstrap'
 import SidebarHome from '../components/SidebarHome'
 import {BiEnvelope} from 'react-icons/bi'
-
 import Link from 'next/link'
 
-const ForgotPassword = () => {
-	return (
+const CreatePin = ()=>{
+	return(
 		<Row className='g-0 vh-100'>
 			<Col sm={7}>
 				<SidebarHome />
@@ -14,16 +13,13 @@ const ForgotPassword = () => {
 			<Col className='p-5 vh-100'>
 				<Container className='mt-5 px-3'>
 					<div className='mb-4'>
-					
-
-
-						<div className='fw-bold fs-4'>Did You Forgot Your Password?</div>
-						<div className='fw-bold fs-4'>Don&lsquo;t Worry, You Can Reset Your</div>
-						<div className='fw-bold fs-4'>Password In a Minutes.</div>
+						<div className='fw-bold fs-4'>Secure Your Account, Your Wallet,</div>
+						<div className='fw-bold fs-4'>and Your Data With 6 Digits PIN</div>
+						<div className='fw-bold fs-4'>That You Created Yourself.</div>
 					</div>
 					<div className='mb-5'>
 						<div className='fs-7 text-pallet-6'>
-						To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.
+						Create 6 digits pin to secure all your money and your data in Zwallet app. Keep it secret and don&lsquo;t tell anyone about your Zwallet account password and the PIN.
 						</div>
 					</div>
 					<form className='mb-3' >
@@ -43,4 +39,4 @@ const ForgotPassword = () => {
 	)
 }
 
-export default ForgotPassword
+export default CreatePin

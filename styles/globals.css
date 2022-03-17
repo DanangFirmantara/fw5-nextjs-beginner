@@ -89,3 +89,6 @@ a {
 	background-color: rgba(99, 121, 244, 1);
 	color: white;
 }
+.sidebar{
+	height: 100%;
+}
