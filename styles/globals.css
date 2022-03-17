@@ -3,6 +3,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Nunito Sans', 'Times New Roman', Times, serif;
+  background-color: #FAFCFF;
+  color: #3A3D42;
 }
 
 a {
@@ -16,6 +18,9 @@ a {
 
 .rounded{
   border-radius: 10px!important;
+}
+.rounded-2{
+  border-radius: 20px !important;
 }
 
 .header{
@@ -39,4 +44,19 @@ a {
 }
 .shadow-dark{
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.fs-a{
+  font-size: 60px;
+}
+.fs-6{
+  font-size: 18px;
+}
+.fs-7{
+  font-size: 16px;
+}
+
+.pattern{
+  background-image: url('../public/images/wave.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
