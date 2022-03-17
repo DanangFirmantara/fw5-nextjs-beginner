@@ -1,10 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Row,Col, Container } from 'react-bootstrap'
 import SidebarHome from '../components/SidebarHome'
-import {BiEnvelope} from 'react-icons/bi'
-import Link from 'next/link'
+import OtpInput from '../components/OtpInput'
+import { useRouter } from 'next/router'
 
 const CreatePin = ()=>{
+
+	const router = useRouter()
+
+	const onPin=(event)=>{
+		event.preventDefault()
+		router.push('/home')
+	}
 	return(
 		<Row className='g-0 vh-100'>
 			<Col sm={7}>
@@ -22,17 +29,12 @@ const CreatePin = ()=>{
 						Create 6 digits pin to secure all your money and your data in Zwallet app. Keep it secret and don&lsquo;t tell anyone about your Zwallet account password and the PIN.
 						</div>
 					</div>
-					<form className='mb-3' >
-						<div className='d-flex position-relative align-items-center mb-5'>
-							<input placeholder='Enter your email' type='email' className='w-100 input'/>
-							<BiEnvelope className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
-						</div>
+					<form className='mb-3' onSubmit={onPin}>
+						<OtpInput />
 						<button type='submit' className='button-input fw-bold'>
 							Confirm
 						</button>
 					</form>
-					<div className='text-pallet-6 fs-7 text-center'>Already have an account? Let&lsquo;s  
-						<Link href='/login'><a className='text-pallet-1 fw-bold'> Login</a></Link></div>
 				</Container>
 			</Col>
 		</Row>

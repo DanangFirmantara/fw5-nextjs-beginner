@@ -1,0 +1,15 @@
+.input{
+	width: 53px;
+	height: 65px;
+	border: 1px solid rgba(169, 169, 169, 0.6);
+	border-radius: 10px;
+	background-color: white;
+	font-size:3rem;
+}
+.input:focus{
+	outline: 3px solid rgba(169, 169, 169, 0.6);
+}
+.input::placeholder{
+	display: flex;
+	justify-content: center;
+}
