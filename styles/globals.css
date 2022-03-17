@@ -29,6 +29,9 @@ a {
 .fw-bolder{
   font-weight: 800 !important;
 }
+.fw-semibold{
+	font-weight: 600;
+}
 .fs-0{
   font-size: 68px;
 }
@@ -54,9 +57,35 @@ a {
 .fs-7{
   font-size: 16px;
 }
-
+.fs-8{
+	font-size: 14px;
+}
 .pattern{
   background-image: url('../public/images/wave.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+.input{
+	width: 100%;
+	border: none;
+	padding: 1rem 3rem;
+	font-size: 16px;
+	color: rgba(169, 169, 169, 0.6);
+	border-bottom: 2px solid rgba(169, 169, 169, 0.6);
+}
+.input:focus{
+	outline: unset;
+}
+.button-input{
+	background-color: rgba(169, 169, 169, 0.6);
+	border: unset;
+	border-radius: 10px;
+	width: 100%;
+	padding: 1rem;
+	font-size: 18px;
+	color: rgba(136, 136, 143, 1);
+}
+.button-input.fill{
+	background-color: rgba(99, 121, 244, 1);
+	color: white;
 }
