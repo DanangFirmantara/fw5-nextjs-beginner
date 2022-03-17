@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Nunito Sans', 'Times New Roman', Times, serif;
+  background-color: #FAFCFF;
+  color: #3A3D42;
 }
 
 a {
@@ -13,4 +14,78 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.rounded{
+  border-radius: 10px!important;
+}
+.rounded-2{
+  border-radius: 20px !important;
+}
+
+.header{
+  height: 30rem;
+}
+.fw-bolder{
+  font-weight: 800 !important;
+}
+.fw-semibold{
+	font-weight: 600;
+}
+.fs-0{
+  font-size: 68px;
+}
+
+.icon{
+  width: 60px;
+  height: 60px;
+}
+.icon-phone{
+  width: 40px;
+  height: 40px;
+  transform: scaleX(-1);
+}
+.shadow-dark{
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.fs-a{
+  font-size: 60px;
+}
+.fs-6{
+  font-size: 18px;
+}
+.fs-7{
+  font-size: 16px;
+}
+.fs-8{
+	font-size: 14px;
+}
+.pattern{
+  background-image: url('../public/images/wave.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.input{
+	width: 100%;
+	border: none;
+	padding: 1rem 3rem;
+	font-size: 16px;
+	color: rgba(169, 169, 169, 0.6);
+	border-bottom: 2px solid rgba(169, 169, 169, 0.6);
+}
+.input:focus{
+	outline: unset;
+}
+.button-input{
+	background-color: rgba(169, 169, 169, 0.6);
+	border: unset;
+	border-radius: 10px;
+	width: 100%;
+	padding: 1rem;
+	font-size: 18px;
+	color: rgba(136, 136, 143, 1);
+}
+.button-input.fill{
+	background-color: rgba(99, 121, 244, 1);
+	color: white;
 }
