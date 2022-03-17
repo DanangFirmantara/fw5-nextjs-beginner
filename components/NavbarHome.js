@@ -1,4 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable linebreak-style */
 import { Col, Row} from 'react-bootstrap'
 import Link from 'next/link'
 
