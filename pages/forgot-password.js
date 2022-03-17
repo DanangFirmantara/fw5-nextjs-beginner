@@ -14,9 +14,6 @@ const ForgotPassword = () => {
 			<Col className='p-5 vh-100'>
 				<Container className='mt-5 px-3'>
 					<div className='mb-4'>
-					
-
-
 						<div className='fw-bold fs-4'>Did You Forgot Your Password?</div>
 						<div className='fw-bold fs-4'>Don&lsquo;t Worry, You Can Reset Your</div>
 						<div className='fw-bold fs-4'>Password In a Minutes.</div>
