@@ -1,35 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './OtpInput.module.css'
+import OtpInputUser from 'react-otp-input'
 
 const OtpInput = () => {
-	const otp=[
-		{item:1},
-		{item:2},
-		{item:3},
-		{item:4},
-		{item:5},
-		{item:6},
-	]
+	const [OTP,setOTP] = useState()
 
 	useEffect(()=>{
-		console.log(otp)
-		otp.map(item=>{
-			console.log(item)
-		})
-	},[])
+		console.log(OTP)
+	},[OTP])
 
 	return (
 		<>
 			<div className='d-flex justify-content-around mb-5'>
-				{otp.map(item=>{
-					return(
-						<div key={item.item}>
-							<input className={styles.input} placeholder={item.item}/>
-						</div>
-					)
-				})}
+				<div>
+					<OtpInputUser 
+						value={OTP} onChange={(OTP)=>setOTP(OTP)} numInputs={6} className={styles.otp}
+					/>
+				</div>
 			</div>
 			
+
 		</>
 	)
 }
