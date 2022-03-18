@@ -113,18 +113,18 @@ input:focus{
 	align-items: center;
 	font-size: 20px;
 	padding : 0 40px;
-	border-left: 3px solid transparent;
+	border-left: 5px solid transparent;
 }
 .sidebar-user ul a:hover{
 	font-size: 20px;
 	font-weight: bold;
-	border-left: 3px solid rgba(99, 121, 244, 1);
+	border-left: 5px solid rgba(99, 121, 244, 1);
 }
 
 .sidebar-user ul a.active{
 	font-size: 20px;
 	font-weight: bold;
-	border-left: 3px solid rgba(99, 121, 244, 1);
+	border-left: 5px solid rgba(99, 121, 244, 1);
 	color: rgba(99, 121, 244, 1);
 }
 .bg-transparent{
