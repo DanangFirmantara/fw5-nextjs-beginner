@@ -79,6 +79,9 @@ input:focus{
 .input:focus{
 	outline: unset;
 }
+.input.phone{
+	padding: 1rem 5rem;
+}
 .button-input{
 	background-color: rgba(169, 169, 169, 0.6);
 	border: unset;

@@ -5,6 +5,7 @@ import NavbarUser from '../components/NavbarUser'
 import SidebarUser from '../components/SidebarUser'
 import { useRouter } from 'next/router'
 import {RiDeleteBin7Line} from 'react-icons/ri'
+import Link from 'next/link'
 
 const ManagePhoneNumber = () => {
 	const router = useRouter()
@@ -36,6 +37,14 @@ const ManagePhoneNumber = () => {
 										<div className='fw-bold fs-4'>+62 813-9387-7946</div>
 									</div>
 									<button className='bg-transparent border-0 position-absolute fs-7 fw-semibold text-pallet-6 end-0 me-5' onClick={onDelete}><RiDeleteBin7Line className='fs-4 deleted'/></button>
+								</div>
+								<div className='w-100 py-3 px-3 d-flex align-items-center justify-content-end pe-5'>
+									<Link href='/add-phone'>
+										<a className='fs-8 text-muted'>
+										Add Phone Number
+										</a>
+									</Link>
+									
 								</div>
 							</Container>
 							
