@@ -2,7 +2,7 @@
 import { Row,Col, Container } from 'react-bootstrap'
 import SidebarHome from '../components/SidebarHome'
 import {BiEnvelope,BiLock} from 'react-icons/bi'
-import { AiFillEyeInvisible} from 'react-icons/ai'
+import { AiFillEyeInvisible } from 'react-icons/ai'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect} from 'react'
