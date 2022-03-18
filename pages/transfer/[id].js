@@ -44,11 +44,11 @@ const ReceiverUser = () => {
 									<form className='d-flex flex-column justify-content-center align-items-center' onSubmit={onTransfer}>
 										<input placeholder='0.00' className='text-center mt-5 mb-3 border-0 fs-1'/>
 										<div className='fw-bold fs-7 mb-5'>Rp.120.000 Available</div>
-										<div className='d-flex position-relative align-items-center mb-4'>
+										<div className='d-flex position-relative align-items-center mb-5'>
 											<input placeholder='Add some notes' type='text' className='w-100 input'/>
 											<BsPencil className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
 										</div>
-										<div className='my-5 w-100'>
+										<div className='w-100 '>
 											<button className='btn-pallet-1 text-white border-0 px-4 py-3 fs-5 rounded-2 shadow-dark w-100' type='submit'>Continue</button>
 										</div>
 									</form>

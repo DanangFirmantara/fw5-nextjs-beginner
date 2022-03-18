@@ -85,18 +85,6 @@ const Transfer = () => {
 											+Rp50.000
 									</div>
 								</div>
-								<div className='d-flex justify-content-between align-items-center my-4'>
-									<div className='d-flex align-items-center'>
-										<Image src='/images/1.png' alt='user' width={65} height={65} />
-										<div className='ms-4'>
-											<div className='fw-bold fs-7'>Samuel Sushi</div>
-											<div className='fs-8'>Accept</div>
-										</div>
-									</div>
-									<div className='text-success fw-bold fs-7'>
-											+Rp50.000
-									</div>
-								</div>
 							</Container>
 							
 						</div>
