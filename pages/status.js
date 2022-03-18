@@ -6,7 +6,7 @@ import SidebarUser from '../components/SidebarUser'
 import Image from 'next/image'
 import {useRouter} from 'next/router'
 
-const Confirmation = () => {
+const Status = () => {
 	const router = useRouter()
 
 	const onConfirm = ()=>{
@@ -66,4 +66,4 @@ const Confirmation = () => {
 	)
 }
 
-export default Confirmation
+export default Status
