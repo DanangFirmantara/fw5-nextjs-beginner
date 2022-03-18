@@ -13,11 +13,12 @@ const SidebarUser = () => {
 	const [active,setActive] = useState('/home')
 
 	useEffect(()=>{
-		console.log(router.pathname)
 		if(router.pathname === '/history'){
 			router.pathname = '/home'
 		} else if(router.pathname === '/transfer/[id]' || router.pathname === '/confirmation' || router.pathname === '/status'){
 			router.pathname = '/transfer'
+		} else if(router.pathname === '/personal-information'){
+			router.pathname = '/profile'
 		}
 		console.log(router.pathname, 'after change')
 		setActive(router.pathname)
