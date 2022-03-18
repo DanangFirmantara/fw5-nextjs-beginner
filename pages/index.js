@@ -167,7 +167,7 @@ export default function Home() {
 							</div>
 						</div>
 						<div className='d-flex position-relative align-items-center'>
-							<div className='bg-pallet-2 shadow-dark d-flex justify-content-center py-5'>
+							<div className='bg-pallet-2 shadow-dark d-flex justify-content-center py-5 rounded-2'>
 								<div className='text-center'>
 									<div className='mb-3'>
 										<Image src='/images/1.png' height={120} width={120} alt='testimoni'></Image>

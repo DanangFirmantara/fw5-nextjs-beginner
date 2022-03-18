@@ -1,11 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Row,Col, Container } from 'react-bootstrap'
-import SidebarHome from '../components/SidebarHome'
-import {BiEnvelope} from 'react-icons/bi'
+import SidebarHome from '../../components/SidebarHome'
+import {BiLock} from 'react-icons/bi'
+import { AiFillEyeInvisible} from 'react-icons/ai'
 
-import Link from 'next/link'
-
-const ForgotPassword = () => {
+const ResetPassword = () => {
 	return (
 		<Row className='g-0 vh-100'>
 			<Col sm={7}>
@@ -25,19 +24,23 @@ const ForgotPassword = () => {
 					</div>
 					<form className='mb-3' >
 						<div className='d-flex position-relative align-items-center mb-5'>
-							<input placeholder='Enter your email' type='email' className='w-100 input'/>
-							<BiEnvelope className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
+							<input placeholder='Create new password' type='password' className='w-100 input' name='password' id='password'/>
+							<BiLock className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
+							<AiFillEyeInvisible className='position-absolute end-0 fs-4 text-pallet-6 me-3' />
+						</div>
+						<div className='d-flex position-relative align-items-center mb-5'>
+							<input placeholder='Confirm password' type='password' className='w-100 input' name='password' id='password'/>
+							<BiLock className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
+							<AiFillEyeInvisible className='position-absolute end-0 fs-4 text-pallet-6 me-3' />
 						</div>
 						<button type='submit' className='button-input fw-bold'>
-							Confirm
+							Reset Password
 						</button>
-					</form>
-					<div className='text-pallet-6 fs-7 text-center'>Already have an account? Let&lsquo;s  
-						<Link href='/login'><a className='text-pallet-1 fw-bold'> Login</a></Link></div>
+					</form>	
 				</Container>
 			</Col>
 		</Row>
 	)
 }
 
-export default ForgotPassword
+export default ResetPassword

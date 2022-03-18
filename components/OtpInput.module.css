@@ -1,0 +1,15 @@
+
+.otp input{
+	border-radius: 10px;
+	margin: 0 15px;
+	width: 53px;
+	height: 65px;
+	border: 1px solid rgba(169, 169, 169, 0.6);
+	border-radius: 10px;
+	background-color: white;
+	color: #3A3D42 ;
+	font-size: 3rem;
+}
+.otp input:focus{
+	border-color: rgba(99, 121, 244, 1);
+}
