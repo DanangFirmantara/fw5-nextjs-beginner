@@ -17,7 +17,7 @@ const SidebarUser = () => {
 			router.pathname = '/home'
 		} else if(router.pathname === '/transfer/[id]' || router.pathname === '/confirmation' || router.pathname === '/status'){
 			router.pathname = '/transfer'
-		} else if(router.pathname === '/personal-information'){
+		} else if(router.pathname === '/personal-information' || router.pathname === '/manage-phone' || router.pathname === '/add-phone'){
 			router.pathname = '/profile'
 		}
 		console.log(router.pathname, 'after change')
