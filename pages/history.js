@@ -8,6 +8,7 @@ import Image from 'next/image'
 const History = () => {
 	return (
 		<>
+		{/* history */}
 			<NavbarUser />
 			<Container className='vh-100'>
 				<Row className='mt-5'>
