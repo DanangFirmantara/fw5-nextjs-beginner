@@ -29,24 +29,29 @@ const Home = () => {
 									</Col>
 									<Col xs={3} >
 										<div className='d-flex flex-column'>
-											<div className='my-2 py-2 rounded-2 text-white fs-6 fw-bold bg-transparent border border-3 border-white d-flex justify-content-center align-items-center'>
-												<IoMdArrowUp className='fs-4 me-2 text-pallet-7'/>
-												<div >Transfer</div>
-											</div>
-											<div className='my-2 py-2 rounded-2 text-white fs-6 fw-bold bg-transparent border border-3 border-white d-flex justify-content-center align-items-center'>
-												<HiPlus className='fs-4 me-2 text-pallet-7'/>
-												<div >Top Up</div>
-											</div>
+											<Link href='/transfer'>
+												<a className='my-2 py-2 rounded-2 text-white fs-6 fw-bold bg-transparent border border-3 border-white d-flex justify-content-center align-items-center'>
+													<IoMdArrowUp className='fs-4 me-2 text-pallet-7'/>
+													<div >Transfer</div>
+												</a>
+											</Link>
+											<Link href='/topup'>
+												<a className='my-2 py-2 rounded-2 text-white fs-6 fw-bold bg-transparent border border-3 border-white d-flex justify-content-center align-items-center'>
+													<HiPlus className='fs-4 me-2 text-pallet-7'/>
+													<div >Top Up</div>
+												</a>
+											</Link>
+											
 										</div>
 									</Col>
 								</Row>
 							</Col>
 						</Row>
 						<Row className='mt-3'>
-							<Col  xs={7} className='bg-pallet-2 rounded-2 shadow-dark py-2 mx-4 ms-0'>
+							<Col  xs={6} className='bg-pallet-2 rounded-2 shadow-dark py-2 mx-4 ms-0'>
 								<BarChart data={[10,50,200,300]} labels={['1','2','3','4']} income={0} expense={0}/>
 							</Col>
-							<Col className='bg-pallet-2 rounded-2 shadow-dark py-4 px-4 mx-3'>
+							<Col className='bg-pallet-2 rounded-2 shadow-dark py-4 px-4 '>
 								<div >
 									<div className='d-flex justify-content-between'>
 										<div className='fw-bold fs-6'>Transaction History </div>
