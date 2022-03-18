@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {IoGridOutline,} from 'react-icons/io5'
 import {IoMdArrowUp} from 'react-icons/io'
 import {HiPlus} from 'react-icons/hi'
 import {AiOutlineUser} from 'react-icons/ai'
 import {FiLogOut} from 'react-icons/fi'
 import Link from 'next/link'
+import { useRouter } from 'next/router' 
+
 
 const SidebarUser = () => {
+	const router = useRouter()
+	const [active,setActive] = useState('/home')
+
+	useEffect(()=>{
+		console.log(router.pathname)
+		setActive(router.pathname)
+	},[router.pathname])
 
 	const menu=[
 		{link:'/home', name:'Dasboard', icon: IoGridOutline},
@@ -17,14 +26,14 @@ const SidebarUser = () => {
 
 	return (
 		<>
-			<div className='bg-white shadow-dark rounded-2 sidebar'>
+			<div className='bg-white shadow-dark rounded-2 sidebar-user'>
 				<ul className='py-5 menu '> 
 					{menu.map(items=>{
 						const Icon = items.icon
 						return(
 							<li key={String(items.name)} className='my-5'>
 								<Link href={items.link}>
-									<a >
+									<a className={active=== items.link? 'active':''}>
 										<Icon className='me-3'/>
 										{items.name}
 									</a>
@@ -33,7 +42,7 @@ const SidebarUser = () => {
 						)
 					})}
 					<li className='mt-5'>
-						<Link href='/home'>
+						<Link href='/'>
 							<a>
 								<FiLogOut className='me-3'/>
 							Logout
