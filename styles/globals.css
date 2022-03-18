@@ -133,7 +133,9 @@ input:focus{
 .bg-none{
 	background-color: transparent;
 }
-/* .px-6 {
-	padding-right:1rem ;
-	padding-left:1rem ;
-} */
+button .deleted:hover{
+	color: rgb(177, 17, 17);
+}
+button .deleted:focus{
+	color: rgb(190, 34, 34);
+}
