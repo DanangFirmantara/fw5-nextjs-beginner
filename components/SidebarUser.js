@@ -15,7 +15,7 @@ const SidebarUser = () => {
 	useEffect(()=>{
 		if(router.pathname === '/history'){
 			router.pathname = '/home'
-		} else{
+		} 	else{
 			setActive(router.pathname)
 		}
 	},[router.pathname])
