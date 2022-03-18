@@ -7,6 +7,7 @@ import {HiPlus} from 'react-icons/hi'
 import {IoMdArrowUp} from 'react-icons/io'
 import Image from 'next/image'
 import BarChart from '../components/BarChart'
+import Link from 'next/link'
 
 const Home = () => {
 	return (
@@ -49,7 +50,10 @@ const Home = () => {
 								<div >
 									<div className='d-flex justify-content-between'>
 										<div className='fw-bold fs-6'>Transaction History </div>
-										<div className='text-pallet-1 fs-6'>All</div>
+										<Link href='/history'>
+											<a className='text-pallet-1 fs-6'>All</a>
+										</Link>
+										
 									</div>
 									<div className='d-flex justify-content-between align-items-center my-4'>
 										<div className='d-flex align-items-center'>
