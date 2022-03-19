@@ -7,7 +7,6 @@ const ModalNotifError = ({ message }) => {
 	const [show, setShow] = useState(false)
 	const handleClose = () => setShow(false)
 	useEffect(() => {
-		console.log(message)
 		if (message) {
 			setShow(true)
 		} else {
@@ -21,8 +20,7 @@ const ModalNotifError = ({ message }) => {
 					<Modal.Title id="contained-modal-title-vcenter" className='text-center'>
 						<div className='text-center'>
 							<div className='notif-icon'>
-								{/* <i className="fa-solid fa-xmark text-pallet-1"></i> */}
-								<ImSad className='text-pallet-4' />
+								<ImSad  />
 							</div>
 						</div>
 					</Modal.Title>

@@ -32,6 +32,25 @@ const auth = (state=initialState, action)=>{
 		state.isLoading = false
 		return { ...state }
 	}
+	case 'AUTH_FORGOT_REQUEST_PENDING':{
+		state.isLoading = true
+		state.successMsg = ''
+		state.errorMsg = ''
+		return { ...state }
+	}
+	case 'AUTH_FORGOT_REQUEST_FULFILLED':{
+		const { message, success} = action.payload.data
+		state.isLoading = false
+		if(success){
+			state.successMsg = message
+		} else{
+			state.errorMsg = message
+		}
+		return { ...state }
+	}
+	case 'AUTH_FORGOT_REQUEST_REJECTED':{
+		return { ...state, errorMsg: action.payload.response?.data.message, isLoading: false }
+	}
 	case 'AUTH_LOGOUT':{
 		window.localStorage.removeItem('token')
 		state.token=''
