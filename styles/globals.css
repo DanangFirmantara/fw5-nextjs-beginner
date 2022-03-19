@@ -73,7 +73,8 @@ input:focus{
 	border: none;
 	padding: 1rem 3rem;
 	font-size: 16px;
-	color: rgba(169, 169, 169, 0.6);
+	/* color: rgba(169, 169, 169, 0.6); */
+	color : rgba(99, 121, 244, 1);
 	border-bottom: 2px solid rgba(169, 169, 169, 0.6);
 }
 .input:focus{
@@ -141,4 +142,19 @@ button .deleted:hover{
 }
 button .deleted:focus{
 	color: rgb(190, 34, 34);
+}
+#modal-notif.modal-header{
+	background-color: #6379F4;
+	display: flex;
+	justify-content: center;
+}
+#modal-notif.modal-header.error{
+	background-color: #FF5B37;
+	display: flex;
+	justify-content: center;
+}
+#modal-notif .notif-icon{
+	padding-top: -10rem;
+	font-size: 15rem;
+	color: #6B4F4F;
 }

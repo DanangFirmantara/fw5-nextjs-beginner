@@ -6,13 +6,20 @@ import {AiOutlineUser} from 'react-icons/ai'
 import {FiLogOut} from 'react-icons/fi'
 import Link from 'next/link'
 import { useRouter } from 'next/router' 
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../redux/actions/auth'
 
 
 const SidebarUser = () => {
 	const router = useRouter()
 	const [active,setActive] = useState('/home')
+	const dispatch = useDispatch()
+	const auth = useSelector(state => state.auth)
 
 	useEffect(()=>{
+		if(auth.token === ''){
+			router.push('/')
+		}
 		if(router.pathname === '/history'){
 			router.pathname = '/home'
 		} else if(router.pathname === '/transfer/[id]' || router.pathname === '/confirmation' || router.pathname === '/status'){
@@ -20,9 +27,8 @@ const SidebarUser = () => {
 		} else if(router.pathname === '/personal-information' || router.pathname === '/manage-phone' || router.pathname === '/add-phone' || router.pathname === '/change-password' || router.pathname === '/change-pin'){
 			router.pathname = '/profile'
 		}
-		console.log(router.pathname, 'after change')
 		setActive(router.pathname)
-	},[router.pathname])
+	},[router.pathname, auth.token])
 
 	const menu=[
 		{link:'/home', name:'Dasboard', icon: IoGridOutline},
@@ -30,6 +36,8 @@ const SidebarUser = () => {
 		{link:'/topup', name:'Top Up', icon: HiPlus},
 		{link:'/profile', name:'Profile', icon: AiOutlineUser},
 	]
+
+	const onLogout = ()=> dispatch(logout())
 
 	return (
 		<>
@@ -49,12 +57,12 @@ const SidebarUser = () => {
 						)
 					})}
 					<li className='mt-5'>
-						<Link href='/'>
+						<button onClick={onLogout} className='bg-transparent border-0'>
 							<a>
 								<FiLogOut className='me-3'/>
 							Logout
 							</a>
-						</Link>
+						</button>
 					</li>
 				</ul>
 			</div>		

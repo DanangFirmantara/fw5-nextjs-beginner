@@ -7,8 +7,27 @@ import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 import Image from 'next/image'
 import { Container ,Row,Col} from 'react-bootstrap'
 import Footer from '../components/Footer'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function Home() {
+	const dispatch = useDispatch()
+	const auth = useSelector(state=> state.auth)
+
+	useEffect(()=>{
+		const token = window.localStorage.getItem('token')
+		if(token){
+			dispatch({
+				type : 'AUTH_LOGIN_FULFILLED',
+				payload :{
+					data :{
+						results: token
+					}
+				}
+			})
+		}
+	},[dispatch, auth.token])
+
 	return (
 		<div >
 			<Head>

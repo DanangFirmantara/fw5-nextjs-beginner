@@ -1,6 +1,13 @@
+/* eslint-disable no-undef */
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+	reactStrictMode: true,
+	env:{
+		BACKEND_URL:'https://fw5-zwallet.herokuapp.com',
+	},
+	images:{
+		domains:['res.cloudinary.com'],
+	}
 }
 
 module.exports = nextConfig
