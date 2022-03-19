@@ -19,7 +19,7 @@ const ResetPassword = () => {
 					</div>
 					<div className='mb-5'>
 						<div className='fs-7 text-pallet-6'>
-						To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.
+						Now you can create a new password for your Zwallet account. Type your password twice so we can confirm your new passsword.
 						</div>
 					</div>
 					<form className='mb-3' >

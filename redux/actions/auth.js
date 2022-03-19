@@ -22,8 +22,21 @@ export const forgotRequest = (email)=>{
 	})
 }
 
+export const resetPassword = ( data ) =>{
+	const { OTP, newPassword, confirmPassword } = data
+	const param = new URLSearchParams()
+	param.append('otp', OTP)
+	param.append('newPassword', newPassword)
+	param.append('confirmPassword', confirmPassword)
+	return({
+		type:'AUTH_FORGOT_REQUEST',
+		payload: http().post('/auth/forgot-password', param)
+	})
+}
+
 export const logout = () =>{
 	return({
 		type :'AUTH_LOGOUT'
 	})
 }
+
