@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../redux/actions/auth'
 import ModalLoading from '../components/ModalLoading'
 import ModalNotifError from '../components/ModalNotifError'
-import ModalNotifSuccess from '../components/ModalNotifSuccess'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
@@ -16,8 +15,10 @@ const Login = () =>{
 	const auth = useSelector(state=>state.auth)
 	const dispatch = useDispatch()
 	const router = useRouter()
-	useEffect(()=>{
-		if(auth.token){
+	const token = window.localStorage.getItem('token')
+
+	useEffect(()=>{ 
+		if(auth.token || token ){
 			router.push('/home')
 		}
 	},[auth.token])
@@ -34,7 +35,6 @@ const Login = () =>{
 		<>
 			<ModalLoading isLoading={auth.isLoading} />
 			<ModalNotifError message={auth.errorMsg} />
-			<ModalNotifSuccess message={auth.successMsg} />
 			<Row className='g-0 vh-100'>
 				<Col sm={7}>
 					<SidebarHome />
@@ -70,7 +70,7 @@ const Login = () =>{
 							Login
 							</button>
 						</form>
-						<div className='text-pallet-6 fs-7 text-center'>Don&lsquo;t have an account? Let%lsquo;s <Link href='/signup'><a className='text-pallet-1 fw-bold'> Sign Up</a></Link></div>
+						<div className='text-pallet-6 fs-7 text-center'>Don&lsquo;t have an account? Let&lsquo;s <Link href='/signup'><a className='text-pallet-1 fw-bold'> Sign Up</a></Link></div>
 					</Container>
 				</Col>
 			</Row>

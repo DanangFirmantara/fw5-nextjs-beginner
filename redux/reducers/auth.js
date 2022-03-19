@@ -49,7 +49,10 @@ const auth = (state=initialState, action)=>{
 		return { ...state }
 	}
 	case 'AUTH_FORGOT_REQUEST_REJECTED':{
-		return { ...state, errorMsg: action.payload.response?.data.message, isLoading: false }
+		const {message} = action.payload.response.data
+		state.isLoading = false
+		state.errorMsg = message
+		return { ...state}
 	}
 	case 'AUTH_LOGOUT':{
 		window.localStorage.removeItem('token')
