@@ -49,10 +49,7 @@ const auth = (state=initialState, action)=>{
 		return { ...state }
 	}
 	case 'AUTH_FORGOT_REQUEST_REJECTED':{
-		console.log(action, 'ini data errornya bg')
-		state.errorMsg = 'Unexpected error'
-		state.isLoading = false
-		return { ...state }
+		return { ...state, errorMsg: action.payload.response?.data.message, isLoading: false }
 	}
 	case 'AUTH_LOGOUT':{
 		window.localStorage.removeItem('token')
