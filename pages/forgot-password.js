@@ -2,10 +2,19 @@
 import { Row,Col, Container } from 'react-bootstrap'
 import SidebarHome from '../components/SidebarHome'
 import {BiEnvelope} from 'react-icons/bi'
-
+import { useDispatch } from 'react-redux'
 import Link from 'next/link'
+import { forgotRequest } from '../redux/actions/auth'
 
 const ForgotPassword = () => {
+	const dispatch = useDispatch()
+	// const auth = useSelector(state=>state.auth)
+
+	const onForgotRequest = (event) =>{
+		event.preventDefault()
+		const email = event.target.elements['email'].value
+		dispatch(forgotRequest(email))
+	}
 	return (
 		<Row className='g-0 vh-100'>
 			<Col sm={7}>
@@ -23,9 +32,9 @@ const ForgotPassword = () => {
 						To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.
 						</div>
 					</div>
-					<form className='mb-3' >
+					<form className='mb-3' onSubmit={onForgotRequest}>
 						<div className='d-flex position-relative align-items-center mb-5'>
-							<input placeholder='Enter your email' type='email' className='w-100 input'/>
+							<input placeholder='Enter your email' type='email' className='w-100 input' name='email' autoComplete='off'/>
 							<BiEnvelope className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
 						</div>
 						<button type='submit' className='button-input fw-bold'>
