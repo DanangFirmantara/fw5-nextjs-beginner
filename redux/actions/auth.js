@@ -40,3 +40,15 @@ export const logout = () =>{
 	})
 }
 
+export const requestSignup = (data) =>{
+	const { fullName, email, password, pin } = data
+	const param = new URLSearchParams()
+	param.append('fullName', fullName)
+	param.append('email', email)
+	param.append('password', password)
+	param.append('pin', pin)
+	return({
+		type: 'AUTH_FORGOT_REQUEST',
+		payload: http().post('/auth/register', param)
+	})
+}

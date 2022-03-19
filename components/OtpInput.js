@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './OtpInput.module.css'
 import OtpInputUser from 'react-otp-input'
+import { useDispatch } from 'react-redux'
+import { otp } from '../redux/actions/otp'
 
 const OtpInput = () => {
 	const [OTP,setOTP] = useState()
+	const dispatch = useDispatch()
 
 	useEffect(()=>{
 		console.log(OTP)
-	},[OTP])
+		dispatch(otp(OTP))
+	},[dispatch, OTP])
 
 	return (
 		<>
@@ -18,8 +22,6 @@ const OtpInput = () => {
 					/>
 				</div>
 			</div>
-			
-
 		</>
 	)
 }
