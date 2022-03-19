@@ -15,9 +15,9 @@ const Login = () =>{
 	const auth = useSelector(state=>state.auth)
 	const dispatch = useDispatch()
 	const router = useRouter()
-	const token = window.localStorage.getItem('token')
 
 	useEffect(()=>{ 
+		const token = window.localStorage.getItem('token')
 		if(auth.token || token ){
 			router.push('/home')
 		}
