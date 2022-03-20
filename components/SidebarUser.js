@@ -7,7 +7,7 @@ import {FiLogOut} from 'react-icons/fi'
 import Link from 'next/link'
 import { useRouter } from 'next/router' 
 import { useDispatch, useSelector } from 'react-redux'
-import { logout } from '../redux/actions/auth'
+import { logout, resetMsg } from '../redux/actions/auth'
 
 
 const SidebarUser = () => {
@@ -17,6 +17,7 @@ const SidebarUser = () => {
 	const auth = useSelector(state => state.auth)
 
 	useEffect(()=>{
+		dispatch(resetMsg())
 		if(auth.token === ''){
 			router.push('/')
 		}

@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import Image from 'next/image'
 import styles from './SidebarHome.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
+import { resetMsg } from '../redux/actions/auth'
+
 
 const SidebarHome = () => {
+	const router = useRouter()
+	const dispatch = useDispatch()
+
+	useEffect(()=>{
+		dispatch(resetMsg())
+	
+	},[router.pathname])
 	return (
 		<div className='text-pallet-2 bg-pallet-1 bg-pallet-1 pattern px-5 py-5 sidebar'>
 			<Container>
