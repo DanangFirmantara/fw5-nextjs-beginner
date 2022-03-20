@@ -54,6 +54,11 @@ const auth = (state=initialState, action)=>{
 		state.errorMsg = message
 		return { ...state}
 	}
+	case 'AUTH_RESET_MSG':{
+		state.successMsg = ''
+		state.errorMsg = ''
+		return { ...state }
+	}
 	case 'AUTH_LOGOUT':{
 		window.localStorage.removeItem('token')
 		state.token=''

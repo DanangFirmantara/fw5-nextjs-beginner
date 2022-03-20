@@ -8,8 +8,20 @@ import {IoMdArrowUp} from 'react-icons/io'
 import Image from 'next/image'
 import BarChart from '../components/BarChart'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { getBalance, getPhoneList } from '../redux/actions/profile'
 
 const Home = () => {
+	const dispatch = useDispatch()
+	const auth = useSelector(state => state.auth)
+	const profile = useSelector(state => state.profile)
+	
+	useEffect(()=>{
+		dispatch(getBalance(auth.token))
+		dispatch(getPhoneList(auth.token))
+		console.log(profile.phone, 'ini list phonenya bg')
+	},[dispatch])
 	return (
 		<>
 			<NavbarUser/>
@@ -24,8 +36,8 @@ const Home = () => {
 								<Row className='justify-content-between px-3 '>
 									<Col>
 										<div className='fs-6'>Balance</div>
-										<div className='fs-1 fw-bold'>Rp.120.000</div>
-										<div className='fs-6'>+62 813-9387-7946</div>
+										<div className='fs-1 fw-bold'>Rp.{profile.balance}</div>
+										<div className='fs-6'></div>
 									</Col>
 									<Col xs={3} >
 										<div className='d-flex flex-column'>

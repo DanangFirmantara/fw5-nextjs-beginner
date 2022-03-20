@@ -52,3 +52,9 @@ export const requestSignup = (data) =>{
 		payload: http().post('/auth/register', param)
 	})
 }
+
+export const resetMsg = () =>{
+	return({
+		type:'AUTH_RESET_MSG'
+	})
+}

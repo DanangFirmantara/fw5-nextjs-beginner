@@ -4,14 +4,13 @@ import SidebarHome from '../components/SidebarHome'
 import {BiEnvelope,BiLock} from 'react-icons/bi'
 import { AiFillEyeInvisible, AiOutlineUser} from 'react-icons/ai'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 import OtpInput from '../components/OtpInput'
 import { useDispatch, useSelector } from 'react-redux'
 import { requestSignup } from '../redux/actions/auth'
 import ModalLoading from '../components/ModalLoading'
 import ModalNotifError from '../components/ModalNotifError'
 import ModalNotifSuccess from '../components/ModalNotifSuccess'
-import { useRouter } from 'next/router'
 
 
 const signup = () => {
@@ -19,16 +18,6 @@ const signup = () => {
 	const otp = useSelector( state => state.otp?.otp )
 	const dispatch = useDispatch()
 	const auth = useSelector( state => state.auth )
-	const router = useRouter()
-
-	useEffect(()=>{
-		console.log(signup)
-		if(signup){
-			console.log(true)
-		} else{
-			console.log(false)
-		}
-	},[signup])
 	
 	const onSignup = (event) =>{
 		event.preventDefault()
@@ -46,7 +35,6 @@ const signup = () => {
 		const pin = otp
 		const data = {...signup, pin}
 		dispatch( requestSignup(data) )
-		router.push('/login')
 	}
 
 	return (
@@ -73,15 +61,15 @@ const signup = () => {
 						</div>
 						<form className='mb-3' onSubmit={onSignup}>
 							<div className='d-flex position-relative align-items-center mb-4'>
-								<input placeholder='Enter your firstname' name='firstname' type='text' className='w-100 input'/>
+								<input placeholder='Enter your firstname' name='firstname' type='text' className='w-100 input' autoComplete='off'/>
 								<AiOutlineUser className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
 							</div>
 							<div className='d-flex position-relative align-items-center mb-4'>
-								<input placeholder='Enter your lastname' name='lastname' type='text' className='w-100 input'/>
+								<input placeholder='Enter your lastname' name='lastname' type='text' className='w-100 input' autoComplete='off'/>
 								<AiOutlineUser className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
 							</div>
 							<div className='d-flex position-relative align-items-center mb-4'>
-								<input placeholder='Enter your email' name='email' type='email' className='w-100 input'/>
+								<input placeholder='Enter your email' name='email' type='email' className='w-100 input' autoComplete='off'/>
 								<BiEnvelope className='position-absolute left-0 fs-4 text-pallet-6 ms-1'/>
 							</div>
 							<div className='d-flex position-relative align-items-center mb-5'>
@@ -115,6 +103,11 @@ const signup = () => {
 							Confirm
 							</button>
 						</form>
+						{auth.successMsg && 
+							<div className='text-pallet-6 fs-7 text-center'>Already have an account? Let&lsquo;s  
+								<Link href='/login'><a className='text-pallet-1 fw-bold'> Login</a></Link></div>
+						}
+						
 					</Container>
 					}
 				</Col>
