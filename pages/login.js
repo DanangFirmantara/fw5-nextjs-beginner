@@ -8,20 +8,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../redux/actions/auth'
 import ModalLoading from '../components/ModalLoading'
 import ModalNotifError from '../components/ModalNotifError'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import ModalNotifSuccess from '../components/ModalNotifSuccess'
 
 const Login = () =>{
 	const auth = useSelector(state=>state.auth)
 	const dispatch = useDispatch()
-	const router = useRouter()
-
-	useEffect(()=>{ 
-		const token = window.localStorage.getItem('token')
-		if(auth.token || token ){
-			router.push('/home')
-		}
-	},[auth.token])
 
 	const onLogin =(event)=>{
 		event.preventDefault()
@@ -35,6 +26,7 @@ const Login = () =>{
 		<>
 			<ModalLoading isLoading={auth.isLoading} />
 			<ModalNotifError message={auth.errorMsg} />
+			<ModalNotifSuccess message={auth.successMsg} />
 			<Row className='g-0 vh-100'>
 				<Col sm={7}>
 					<SidebarHome />

@@ -7,7 +7,7 @@ import {FiLogOut} from 'react-icons/fi'
 import Link from 'next/link'
 import { useRouter } from 'next/router' 
 import { useDispatch, useSelector } from 'react-redux'
-import { logout, resetMsg } from '../redux/actions/auth'
+import { logout} from '../redux/actions/auth'
 
 
 const SidebarUser = () => {
@@ -17,10 +17,7 @@ const SidebarUser = () => {
 	const auth = useSelector(state => state.auth)
 
 	useEffect(()=>{
-		dispatch(resetMsg())
-		if(auth.token === ''){
-			router.push('/')
-		}
+		
 		if(router.pathname === '/history'){
 			router.pathname = '/home'
 		} else if(router.pathname === '/transfer/[id]' || router.pathname === '/confirmation' || router.pathname === '/status'){
@@ -29,7 +26,7 @@ const SidebarUser = () => {
 			router.pathname = '/profile'
 		}
 		setActive(router.pathname)
-	},[router.pathname, auth.token])
+	},[dispatch, router.pathname, auth.token])
 
 	const menu=[
 		{link:'/home', name:'Dasboard', icon: IoGridOutline},
@@ -42,6 +39,7 @@ const SidebarUser = () => {
 
 	return (
 		<>
+			{/* {!auth.token && <Link href='/' />} */}
 			<div className='bg-white shadow-dark rounded-2 sidebar-user'>
 				<ul className='py-5 menu '> 
 					{menu.map(items=>{
@@ -49,7 +47,7 @@ const SidebarUser = () => {
 						return(
 							<li key={String(items.name)} className='my-5'>
 								<Link href={items.link}>
-									<a className={active=== items.link? 'active':''}>
+									<a className={active=== items.link? 'active text-pallet-1':'text-pallet-1'}>
 										<Icon className='me-3'/>
 										{items.name}
 									</a>
