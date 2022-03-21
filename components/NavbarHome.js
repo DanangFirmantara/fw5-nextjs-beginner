@@ -15,7 +15,6 @@ const NavbarHome = () =>{
 	useEffect(()=>{
 		dispatch(resetMsg())
 		const token = window.localStorage.getItem('token')
-		console.log(token)
 		if(token){
 			dispatch({
 				type : 'AUTH_LOGIN_FULFILLED',

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
 import FooterUser from '../components/FooterUser'
 import NavbarUser from '../components/NavbarUser'
@@ -8,32 +8,26 @@ import {IoMdArrowUp} from 'react-icons/io'
 import Image from 'next/image'
 import BarChart from '../components/BarChart'
 import Link from 'next/link'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect} from 'react'
-import { getBalance, getPhoneList } from '../redux/actions/profile'
-import { useRouter } from 'next/router'
-import { resetMsg } from '../redux/actions/auth'
-import { getAllUsers } from '../redux/actions/users'
+import Layout from '../components/Layout'
+import { useDispatch, useSelector} from 'react-redux'
 
 const Home = () => {
-	const dispatch = useDispatch()
-	const auth = useSelector(state => state.auth)
 	const profile = useSelector(state => state.profile)
-	const router = useRouter()
-
+	const [phone, setPhone] = useState()
+	const [balance, setBalance] = useState(0)
+	const dispatch = useDispatch()
 	useEffect(()=>{
-		dispatch(resetMsg())
-		if(!auth.token){
-			router.push('/')
-		} else {
-			dispatch(getBalance(auth.token))
-			dispatch(getPhoneList(auth.token))
-			dispatch(getAllUsers(auth.token))
+		if( profile.phone && profile.phone.length > 0 ){
+			setPhone(profile.phone[0].number)
 		}
-	},[dispatch])
-
+		if(profile.balance){
+			console.log(profile.balance)
+			setBalance(profile.balance)
+		}
+	},[profile, dispatch])
+	
 	return (
-		<>
+		<Layout >
 			<NavbarUser/>
 			<Container className='vh-100'>
 				<Row className='mt-5'>
@@ -46,8 +40,8 @@ const Home = () => {
 								<Row className='justify-content-between px-3 '>
 									<Col>
 										<div className='fs-6'>Balance</div>
-										<div className='fs-1 fw-bold'>Rp.{profile.balance}</div>
-										<div className='fs-6'>{profile.phone? profile.phone[0].number : ''}</div>
+										<div className='fs-1 fw-bold'>{balance ? `Rp. ${String(balance)}` : ''}</div>
+										<div className='fs-6'>{phone ? phone : ''}</div>
 									</Col>
 									<Col xs={3} >
 										<div className='d-flex flex-column'>
@@ -137,7 +131,7 @@ const Home = () => {
 				</Row>
 			</Container>
 			<FooterUser />
-		</>
+		</Layout>
 	)
 }
 
