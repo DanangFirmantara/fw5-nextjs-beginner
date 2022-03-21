@@ -16,6 +16,7 @@ export const getProfile = (token) =>{
 export const getPhoneList = (token) =>{
 	return({
 		type : 'PROFILE_GET_PHONE_LIST',
-		payload : http(token).get('profile/phones')
+		payload : http(token).get('/profile/phones')
 	})
 }
+

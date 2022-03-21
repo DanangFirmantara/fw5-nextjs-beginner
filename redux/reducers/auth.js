@@ -23,12 +23,16 @@ const auth = (state=initialState, action)=>{
 		} else{
 			state.errorMsg = message
 			state.token = ''
-			window.localStorage.removeItem('token')
 		}
 		return { ...state }
 	}
 	case 'AUTH_LOGIN_REJECTED':{
-		state.errorMsg = 'Unexpected error'
+		const {message} = action.payload.response.data
+		if(message){
+			state.errorMsg = message
+		} else{
+			state.errorMsg = action.payload.response.statusText
+		}
 		state.isLoading = false
 		return { ...state }
 	}
