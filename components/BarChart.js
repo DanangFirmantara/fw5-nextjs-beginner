@@ -60,7 +60,7 @@ const BarChart = ({labels, data:rawData, income=0, expense=0}) => {
 			{
 				label: 'Dataset 1',
 				data: rawData,
-				backgroundColor: '#6379F4',
+				backgroundColor: 'rgb(5, 110, 102)',
 				borderRadius: 1000,
 				barThickness: 14
 			}

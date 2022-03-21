@@ -47,7 +47,7 @@ const SidebarUser = () => {
 						return(
 							<li key={String(items.name)} className='my-5'>
 								<Link href={items.link}>
-									<a className={active=== items.link? 'active':''}>
+									<a className={active=== items.link? 'active text-pallet-1':'text-pallet-1'}>
 										<Icon className='me-3'/>
 										{items.name}
 									</a>
