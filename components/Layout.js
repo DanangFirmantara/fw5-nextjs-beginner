@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { resetMsg } from '../redux/actions/auth'
 import { getProfile, getBalance, getPhoneList } from '../redux/actions/profile'
+import { getAllUsers } from '../redux/actions/users'
 
 const Layout = ({children}) =>{
 	const dispatch = useDispatch()
@@ -33,6 +34,7 @@ const Layout = ({children}) =>{
 			dispatch(getProfile(auth.token))
 			dispatch(getBalance(auth.token))
 			dispatch(getPhoneList(auth.token))
+			dispatch( getAllUsers(auth.token) )
 		}
 		
 	},[dispatch, auth.token])

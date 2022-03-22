@@ -13,14 +13,14 @@ const users = (state = initialState, action)=>{
 		state.errorMsg = ''
 		return { ...state }
 	}
-	case 'USER_GET_ALL_USERS_FULFILLED':{
+	case 'USERS_GET_ALL_USERS_FULFILLED':{
 		const { results, message } = action.payload.data
 		state.isLoading = false
 		state.users = results
 		state.successMsg = message
 		return { ...state }
 	}
-	case 'USER_GET_ALL_USERS_REJECT':{
+	case 'USERS_GET_ALL_USERS_REJECT':{
 		const {message} = action.payload.response.data
 		if(message){
 			state.errorMsg = message

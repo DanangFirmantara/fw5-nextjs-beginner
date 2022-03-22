@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
 import FooterUser from '../components/FooterUser'
 import NavbarUser from '../components/NavbarUser'
 import SidebarUser from '../components/SidebarUser'
 import Image from 'next/image'
 import { BiSearch } from 'react-icons/bi'
+import Layout from '../components/Layout'
+import { useSelector } from 'react-redux'
+
 const Transfer = () => {
+
+	const users = useSelector(state=>state.users)
+	useEffect(()=>{
+		if(users.users && users.users.length > 0){
+			console.log(users.users[0])
+		}
+	})
+
 	return (
-		<>
+		<Layout >
 			<NavbarUser/>
 			<Container className='vh-100'>
 				<Row className='mt-5'>
@@ -92,7 +103,8 @@ const Transfer = () => {
 				</Row>
 			</Container>
 			<FooterUser />
-		</>
+		</Layout>
+			
 	)
 }
 
