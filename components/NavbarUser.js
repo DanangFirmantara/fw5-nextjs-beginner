@@ -11,7 +11,6 @@ const NavbarUser = () => {
 	const [imgUser, setImgUser] = useState(null)
 	const [phone, setPhone] = useState()
 	useEffect(()=>{
-		console.log(profile)
 		if(profile.profile){
 			setProfileUser(profile.profile.fullName)
 			if(profile.profile.picture){

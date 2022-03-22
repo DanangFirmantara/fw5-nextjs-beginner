@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { resetMsg } from '../redux/actions/auth'
 import { getProfile, getBalance, getPhoneList } from '../redux/actions/profile'
 
-
 const Layout = ({children}) =>{
 	const dispatch = useDispatch()
 	const auth = useSelector(state => state.auth)
